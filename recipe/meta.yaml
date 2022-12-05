@@ -1,5 +1,5 @@
 {% set name = "trailscraper" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/trailscraper-{{ version }}.tar.gz
-  sha256: 8aade831f331d5f3b3780478473c4dbe45dc2018026df0112624cd37bbdc3605
+  sha256: b0ae6be8013226943a6db068420fef8c537c0061cb1e36528b05896aa9326393
 
 build:
   number: 0
