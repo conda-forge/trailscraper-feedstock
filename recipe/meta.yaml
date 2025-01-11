@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/trailscraper-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/trailscraper-{{ version }}.tar.gz
   sha256: fe0f7970554a7100be6a4dc6ecce0ce0f4a5a3337a689e7035df7ac3c37ec21a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - trailscraper=trailscraper.cli:root_group
@@ -19,10 +19,10 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - boto3 ==1.26.54
     - click ==8.1.3
     - toolz ==0.12.0
@@ -38,6 +38,7 @@ test:
     - trailscraper --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://github.com/flosell/trailscraper
