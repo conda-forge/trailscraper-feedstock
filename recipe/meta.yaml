@@ -1,5 +1,5 @@
 {% set name = "trailscraper" %}
-{% set version = "0.9.1" %}
+{% set version = "0.10.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/trailscraper-{{ version }}.tar.gz
-  sha256: 96278fcd08aba2c684cad5e73972149d3f756ef52f146532440793ddcbbf9230
+  sha256: 805994a27ebd3ecd9353cd85b54139822e73980b1da93f63fa0e5d42c8b67ec1
 
 build:
   number: 0
@@ -23,12 +23,13 @@ requirements:
     - setuptools
     - pip
   run:
+    - ruamel-yaml ==0.18.10
     - python >={{ python_min }}
-    - boto3 ==1.37.9
+    - boto3 ==1.38.3
     - click ==8.1.8
     - toolz ==1.0.0
     - dateparser ==1.2.1
-    - pytz ==2025.1
+    - pytz ==2025.2
     - ruamel.yaml ==0.18.10
 
 test:
